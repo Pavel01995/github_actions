@@ -15,7 +15,7 @@ permissions:
 
 
 env:
-  PUBLIC_PATH: /github_actions/
+    PUBLIC_PATH: /github_actions/
 
 
 jobs: # Секция jobs определяет этапы процесса
