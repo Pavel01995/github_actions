@@ -13,15 +13,14 @@ permissions:
   pages: write # разрешаем перезаписывать github page
   id-token: write # Разрешаем использовать GITHUB_TOKEN
 
+
+  env:
+  PUBLIC_PATH: /github_actions/
+
 jobs: # Секция jobs определяет этапы процесса
-  
+ 
   deploy:  # Создаётся одна задача deploy, имя может быть любым
     runs-on: ubuntu-latest # Определяет, в каком окружении будут запущены все команды этой задачи
-    
-    # ПЕРЕНЕСИТЕ ENV СЮДА — внутрь задачи deploy
-    env:
-      PUBLIC_PATH: /github_actions/
-
     steps: # Перечень шагов, команд, которые будут выполнены в этом блоке
       - name: Checkout # Шаг для получения доступа к репозиторию
         uses: actions/checkout@v4 # Данный шаг использует готовый workflow actions/checkout@v4: он клонирует текущий коммит репозитория. Таким образом, раннеру становится доступен исходный код проекта
